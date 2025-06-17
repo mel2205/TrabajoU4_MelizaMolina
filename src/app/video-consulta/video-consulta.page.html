@@ -1,0 +1,66 @@
+<ion-header class="custom-header">
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/paciente"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <span class="hora">9:41</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="video-call-content">
+  <div class="doctor-info">
+    <ion-avatar class="avatar-doc">
+  <ion-icon name="person-circle-outline" style="font-size: 40px; color: #bbb;"></ion-icon>
+</ion-avatar>
+
+    <div class="doctor-details">
+      <div class="doctor-row">
+        <span class="doctor-name">Dr.</span>
+        <ion-chip color="primary" class="help-chip">Ayuda</ion-chip>
+      </div>
+      <span class="doctor-specialty">Medicina General</span>
+    </div>
+  </div>
+
+  <div class="call-time-status">
+    <ion-icon name="ellipse" class="dot"></ion-icon>
+    <span class="call-time">05:23</span>
+    <ion-badge color="success" class="connection-status">Conexión Estable</ion-badge>
+  </div>
+
+  <div class="video-area">
+    <div class="main-video"></div>
+  </div>
+
+  <!-- Botones laterales derechos -->
+<div class="side-buttons">
+  <ion-button fill="solid" class="side-btn" color="dark">
+    <ion-icon slot="icon-only" name="desktop-outline"></ion-icon>
+  </ion-button>
+  <ion-button fill="solid" class="side-btn" color="dark">
+    <ion-icon slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon>
+  </ion-button>
+  <ion-button fill="solid" class="side-btn" color="dark">
+    <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+  </ion-button>
+</div>
+
+<!-- Botones inferiores (barra inferior) -->
+<div class="bottom-bar">
+  <ion-button fill="solid" color="medium" class="bottom-btn">
+    <ion-icon slot="icon-only" name="mic-off-outline"></ion-icon>
+  </ion-button>
+  <ion-button fill="solid" color="medium" class="bottom-btn">
+    <ion-icon slot="icon-only" name="videocam-outline"></ion-icon>
+  </ion-button>
+  <ion-button fill="solid" color="danger" class="bottom-btn">
+    <ion-icon slot="icon-only" name="call-outline"></ion-icon>
+  </ion-button>
+  <ion-button fill="solid" color="medium" class="bottom-btn">
+    <ion-icon slot="icon-only" name="volume-high-outline"></ion-icon>
+  </ion-button>
+</div>
+
+</ion-content>

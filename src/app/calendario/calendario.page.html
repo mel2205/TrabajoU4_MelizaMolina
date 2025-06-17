@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cuidador"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Agendar Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        <ion-icon name="calendar-outline" slot="start" style="font-size: 2em; vertical-align: middle;"></ion-icon>
+        Selecciona una fecha
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-datetime
+          presentation="date"
+          [(ngModel)]="fechaSeleccionada"
+          placeholder="Selecciona una fecha"
+          color="primary">
+        </ion-datetime>
+      </ion-item>
+      <ion-button expand="block" color="primary" (click)="agendarEvento()" [disabled]="!fechaSeleccionada">
+        <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+        Guardar Evento
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ...formulario arriba... -->
+
+<ion-list *ngIf="eventos.length > 0">
+  <ion-list-header>
+    <ion-label>Eventos Agendados</ion-label>
+  </ion-list-header>
+  <ion-item *ngFor="let evento of eventos">
+    <ion-icon name="calendar-outline" slot="start" color="primary"></ion-icon>
+    <ion-label>
+      {{ evento | date:'fullDate' }}
+    </ion-label>
+    <ion-button fill="clear" color="danger" slot="end" (click)="eliminarEvento(evento)">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary" (click)="irAHome()">
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      Ir al Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

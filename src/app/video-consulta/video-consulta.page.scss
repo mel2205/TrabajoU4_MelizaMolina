@@ -1,0 +1,141 @@
+:host {
+  --ion-background-color: #18191c;
+}
+
+.custom-header {
+  ion-toolbar {
+    --background: #1976d2;
+    min-height: 36px;
+    .hora {
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
+
+.video-call-content {
+  background: #18191c;
+
+  .doctor-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    margin-left: 18px;
+    .avatar-doc {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #555;
+      background: #222;
+    }
+    .doctor-details {
+      display: flex;
+      flex-direction: column;
+      .doctor-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .doctor-name {
+        font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+      }
+      .help-chip {
+        font-size: 11px;
+        height: 18px;
+        --background: #42aaff;
+        --color: #fff;
+        margin-left: 0;
+      }
+      .doctor-specialty {
+        color: #4caf50;
+        font-size: 13px;
+        margin-top: 1px;
+      }
+    }
+  }
+
+  .call-time-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 0 22px;
+    .dot {
+      color: #fff;
+      font-size: 8px;
+    }
+    .call-time {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .connection-status {
+      background: #1d3b1d;
+      color: #46e246;
+      border-radius: 12px;
+      font-size: 13px;
+      padding: 3px 10px;
+      font-weight: 500;
+    }
+  }
+
+  .video-area {
+    margin: 24px 0 0 0;
+    display: flex;
+    justify-content: flex-end;
+    .main-video {
+      width: 120px;
+      height: 90px;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      background: #222;
+      margin-right: 35px;
+    }
+  }
+
+  .side-buttons {
+    position: absolute;
+    right: 25px;
+    top: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    z-index: 10;
+    .side-btn {
+      --background: #232323;
+      --color: #fff;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
+      box-shadow: 0 2px 6px #1114;
+    }
+  }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+    .bottom-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 28px;
+      --box-shadow: none;
+      --background: #444;
+      --color: #fff;
+      &.ion-color-danger {
+        --background: #e53935;
+        --color: #fff;
+      }
+    }
+  }
+}

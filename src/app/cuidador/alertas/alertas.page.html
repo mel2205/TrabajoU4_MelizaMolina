@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cuidador"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alertas y Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="tabSeleccionado">
+    <ion-segment-button value="historial">
+      Historial
+    </ion-segment-button>
+    <ion-segment-button value="config">
+      Configuración
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="tabSeleccionado === 'historial'">
+    <ion-list>
+      <ion-item *ngFor="let alerta of historialAlertas">
+        <ion-icon [name]="alerta.icono" slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{ alerta.titulo }}</h2>
+          <p>{{ alerta.fecha | date:'short' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-note *ngIf="historialAlertas.length === 0" color="medium">
+      No hay alertas recientes.
+    </ion-note>
+  </div>
+
+  <div *ngIf="tabSeleccionado === 'config'">
+    <ion-list>
+      <ion-item>
+        <ion-label>Alertas de eventos</ion-label>
+        <ion-toggle [(ngModel)]="configAlertas.eventos"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Alertas de medicamentos</ion-label>
+        <ion-toggle [(ngModel)]="configAlertas.medicinas"></ion-toggle>
+      </ion-item>
+      <!-- Agrega más switches según necesites -->
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary" (click)="irAHome()">
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      Ir al Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+

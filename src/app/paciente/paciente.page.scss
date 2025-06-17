@@ -1,0 +1,111 @@
+body, ion-app {
+  width: 100vw !important;
+  min-width: 100vw !important;
+  position: relative;
+}
+
+.fondo-paciente {
+  --background: #fff;
+}
+
+.cabecera {
+  background: #2196f3;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0 20px 0;
+  border-radius: 0 0 20px 20px;
+
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .fecha {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+}
+
+.grid-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 35px 18px 0 18px;
+}
+
+.opcion {
+  background: #fff;
+  border: 2px solid #2196f3;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 0 14px 0;
+  color: #2196f3;
+  font-weight: 500;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 6px #0001;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+
+  .icono {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
+
+  &:active {
+    box-shadow: 0 2px 12px #2196f360;
+  }
+}
+
+.btn-emergencia {
+  width: calc(100% - 36px);
+  margin: 40px 18px 0 18px;
+  background: #ff3b30;
+  color: #fff;
+  border-radius: 14px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 18px 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px #ff3b3020;
+  transition: background 0.2s;
+
+  .icono-alerta {
+    font-size: 1.6rem;
+  }
+
+  &:active {
+    background: #d32f2f;
+  }
+ion-content {
+  --padding-bottom: 70px; /* Deja espacio para el footer */
+  min-height: 100vh;      /* Asegura que ocupe toda la pantalla */
+}
+.home-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  background: transparent;
+  z-index: 1000;
+  pointer-events: none;
+  text-align: center;
+}
+.home-footer ion-button {
+  pointer-events: all;
+  margin: 0 auto;
+  display: inline-flex;
+}
+
+}

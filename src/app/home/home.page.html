@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" class="ion-padding custom-content">
+  <div class="logo-container">
+    <div class="logo">DocYa</div>
+  </div>
+  <div id="container">
+    <h2 class="bienvenido">¡Bienvenido!</h2>
+    <p class="subtitulo">Selecciona tu tipo de usuario para comenzar</p>
+
+    <ion-button
+      expand="block"
+      size="large"
+      color="primary"
+      routerLink="/paciente"
+      class="btn-user-type paciente"
+    >
+      <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+      Soy Paciente
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      size="large"
+      routerLink="/cuidador"
+      class="btn-user-type cuidador"
+    >
+      <ion-icon slot="start" name="medkit-outline"></ion-icon>
+      Soy Cuidador
+    </ion-button>
+
+    <div class="divider">
+      <span>O continúa con</span>
+    </div>
+
+    <div class="social-buttons">
+      <ion-button fill="outline" shape="round" class="social-btn">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" shape="round" class="social-btn">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" shape="round" class="social-btn">
+        <ion-icon name="logo-apple"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="register">
+      <span>¿No tienes una cuenta? </span>
+      <a routerLink="/register">Regístrate</a>
+    </div>
+  </div>
+</ion-content>

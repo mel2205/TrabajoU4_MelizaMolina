@@ -1,0 +1,168 @@
+.header-profile {
+  display: flex;
+  align-items: center;
+  padding: 16px 0 14px 10px;
+}
+
+.profile-icon {
+  font-size: 3.2em;
+  color: #fff;
+  margin-right: 16px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.profile-desc {
+  font-size: 1em;
+  color: #e3e3e3;
+  margin-top: 2px;
+}
+
+
+
+
+
+
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-icon {
+  font-size: 2.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-main {
+  font-size: 1.28em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.user-icon {
+  font-size: 2.5em;
+  color: #fff;
+}
+
+.title-date {
+  font-size: 1em;
+  color: #fff;
+  opacity: 0.85;
+}
+
+.vitales-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 16px 20px 16px;
+}
+.vital-card {
+  border: 2px solid #2196F3;
+  border-radius: 14px;
+  background: #fff;
+  padding: 18px 0;
+  text-align: center;
+}
+.vital-valor {
+  font-size: 1.35em;
+  font-weight: bold;
+  color: #2196F3;
+}
+.vital-label {
+  color: #555;
+  font-size: 1em;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 1.08em;
+  margin: 18px 0 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.medicamentos-list {
+  background: #fff;
+  border-radius: 14px;
+  margin: 0 16px 18px 16px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 8px #0001;
+}
+.medicamento-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.medicamento-item:last-child {
+  margin-bottom: 0;
+}
+.med-nombre {
+  font-weight: 500;
+}
+.med-hora {
+  font-size: 0.97em;
+  color: #666;
+}
+.badge {
+  padding: 3px 15px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 0.92em;
+  font-weight: bold;
+}
+.badge.tomado {
+  background: #3ad29f;
+}
+.badge.pendiente {
+  background: #ffd600;
+  color: #333;
+}
+
+.alerta-item {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 16px 18px 16px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 8px #0001;
+  gap: 10px;
+}
+.alerta-icon {
+  color: #ff5252;
+  font-size: 1.5em;
+}
+.alerta-titulo {
+  font-weight: 500;
+  color: #e53935;
+}
+.alerta-tiempo {
+  font-size: 0.94em;
+  color: #888;
+}

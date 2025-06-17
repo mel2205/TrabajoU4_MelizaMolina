@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+    <div class="header-profile">
+      <ion-icon name="person-circle" class="profile-icon"></ion-icon>
+       <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+      <div class="profile-info">
+        <div class="profile-name">Juan Pérez</div>
+        <div class="profile-desc">75 años - Paciente</div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo-cuidador">
+
+  <!-- Signos vitales -->
+  <div class="vitales-grid">
+    <div class="vital-card">
+      <div class="vital-valor">120/80</div>
+      <div class="vital-label">Presión</div>
+    </div>
+    <div class="vital-card">
+      <div class="vital-valor">72</div>
+      <div class="vital-label">Pulso</div>
+    </div>
+    <div class="vital-card">
+      <div class="vital-valor">98%</div>
+      <div class="vital-label">Oxígeno</div>
+    </div>
+    <div class="vital-card">
+      <div class="vital-valor">36.5°</div>
+      <div class="vital-label">Temperatura</div>
+    </div>
+  </div>
+
+  <!-- Medicamentos de Hoy -->
+  <div class="section-title">
+    <ion-icon name="medkit-outline"></ion-icon>
+    Medicamentos de Hoy
+  </div>
+  <div class="medicamentos-list">
+    <div class="medicamento-item">
+      <div>
+        <div class="med-nombre">Enalapril 10mg</div>
+        <div class="med-hora">8:00 AM</div>
+      </div>
+      <span class="badge tomado">Tomado</span>
+    </div>
+    <div class="medicamento-item">
+      <div>
+        <div class="med-nombre">Metformina 850mg</div>
+        <div class="med-hora">14:00 PM</div>
+      </div>
+      <span class="badge pendiente">Pendiente</span>
+    </div>
+  </div>
+
+  <!-- Alertas Recientes -->
+  <div class="section-title">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    Alertas Recientes
+  </div>
+  <div class="alerta-item">
+    <ion-icon name="alert-circle" class="alerta-icon"></ion-icon>
+    <div>
+      <div class="alerta-titulo">Presión arterial elevada</div>
+      <div class="alerta-tiempo">Hace 30 minutos</div>
+    </div>
+  </div>
+  
+</ion-content>
+
+<!-- Tab Bar -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="inicio" (click)="irAHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="agenda" (click)="irACalendario()">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Agenda</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="alertas" (click)="irAAlertas()">
+      <ion-icon name="alert"></ion-icon>
+      <ion-label>Alertas</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="ajustes">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Ajustes</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

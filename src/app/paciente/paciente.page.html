@@ -1,0 +1,42 @@
+<ion-content class="fondo-paciente">
+
+  <div class="cabecera">
+    <h2>Hola, Juan</h2>
+    <p class="fecha">Jueves, 27 Abril</p>
+  </div>
+
+  <div class="grid-opciones">
+    <div class="opcion" (click)="irAVideoConsulta()">
+      <ion-icon name="videocam" class="icono"></ion-icon>
+      <span>Video Consulta</span>
+    </div>
+    <div class="opcion" (click)="irAMisMedicinas()">
+      <ion-icon name="medkit" class="icono"></ion-icon>
+      <span>Mis Medicinas</span>
+    </div>
+    <div class="opcion">
+      <ion-icon name="person" class="icono"></ion-icon>
+      <span>Mi Doctor</span>
+    </div>
+    <div class="opcion">
+      <ion-icon name="calendar" class="icono"></ion-icon>
+      <span>Mis Citas</span>
+    </div>
+  </div>
+
+  <button class="btn-emergencia">
+    <ion-icon name="alert-circle" class="icono-alerta"></ion-icon>
+    Emergencia
+  </button>
+
+</ion-content>
+
+<!-- Footer Home fijo abajo, FUERA de ion-content -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary" (click)="irAHome()">
+      Ir al Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary" class="custom-toolbar">
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/paciente"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div class="title-main">Mis Medicamentos</div>
+      <div class="title-date">Jueves, 27 Abril</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo-paciente">
+
+  <!-- Leyenda de estados -->
+  <div class="legend">
+    <span class="dot pendiente"></span> Pendiente
+    <span class="dot tomado"></span> Tomado
+    <span class="dot perdido"></span> Perdido
+  </div>
+
+  <!-- Próxima Medicina -->
+  <div class="proxima-medicina">
+    <div class="proxima-header">
+      <b>Próxima Medicina</b>
+      <span class="hora">14:00</span>
+    </div>
+    <div class="nombre-medicina">Metformina 850mg</div>
+    <div class="detalle-medicina">1 pastilla con almuerzo</div>
+    <div class="indicaciones">
+      <div class="indicacion"><span class="num">1</span> Tomar con un vaso de agua</div>
+      <div class="indicacion"><span class="num">2</span> Durante o después del almuerzo</div>
+      <div class="indicacion"><span class="num">3</span> Confirmar la toma en la app</div>
+    </div>
+  </div>
+
+  <!-- Medicinas del día -->
+  <div class="medicina-card tomado">
+    <div class="hora-medicina">8:00</div>
+    <div class="nombre-medicina">Enalapril 10mg</div>
+    <div class="detalle-medicina">1 pastilla en ayunas</div>
+    <ion-icon name="checkmark-circle" class="icono-tomado"></ion-icon>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary" (click)="irAHome()">
+      Ir al Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,137 @@
+.custom-toolbar {
+  --background: #2196F3;
+  --color: #fff;
+  border-radius: 16px 16px 0 0;
+  margin: 8px 8px 0 8px;
+  min-height: 110px; /* Aumenta la altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ion-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.title-main {
+  font-size: 1.28em; /* Levemente más grande */
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.title-date {
+  font-size: 1em;
+  opacity: 0.85;
+}
+
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 26px 0 18px 18px; /* Más separación */
+  font-size: 1em;
+}
+.dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.dot.pendiente { background: #ffd600; }
+.dot.tomado { background: #3ad29f; }
+.dot.perdido { background: #ff5252; }
+
+.proxima-medicina {
+  border: 2px solid #2196F3;
+  border-radius: 14px;
+  margin: 0 16px 32px 16px; /* Más espacio abajo */
+  padding: 22px 18px 16px 18px; /* Más relleno interno */
+  background: #fff;
+}
+.proxima-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05em;
+  margin-bottom: 6px;
+}
+.proxima-header .hora {
+  color: #2196F3;
+  font-weight: bold;
+  font-size: 1.15em;
+}
+.nombre-medicina {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.detalle-medicina {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 10px;
+}
+.indicaciones {
+  background: #f5f7fa;
+  padding: 10px;
+  border-radius: 9px;
+}
+.indicacion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 0.98em;
+}
+.indicacion .num {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: #2196F3;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 22px;
+  font-weight: bold;
+  margin-right: 7px;
+  font-size: 1em;
+}
+
+.medicina-card {
+  border-radius: 14px;
+  margin: 0 16px 22px 16px; /* Más espacio entre tarjetas */
+  padding: 16px 18px 12px 18px; /* Más relleno interno */
+  background: #fff;
+  border-left: 5px solid #3ad29f;
+  position: relative;
+}
+.medicina-card .hora-medicina {
+  color: #222;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.medicina-card .nombre-medicina {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.medicina-card .detalle-medicina {
+  font-size: 0.98em;
+  color: #666;
+}
+.icono-tomado {
+  color: #3ad29f;
+  font-size: 1.45em;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+}
+.fondo-paciente {
+  padding-top: 8px;
+}
+.boton-final-container {
+  margin: 32px 16px 24px 16px; /* Espaciado superior y lateral */
+}
+ion-content {
+  --padding-bottom: 80px;
+}
+

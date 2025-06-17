@@ -1,0 +1,7 @@
+{
+  "name": "DocYa_U4",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
