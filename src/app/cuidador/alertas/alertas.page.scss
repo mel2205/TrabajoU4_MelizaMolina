@@ -1,0 +1,79 @@
+.alertas-header {
+  background: #2196f3;
+  border-radius: 0 0 2rem 2rem;
+  padding: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.alertas-resumen {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.alerta-categoria {
+  text-align: center;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  min-width: 80px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-weight: bold;
+  &.critica { background: #e53935; }
+  &.importante { background: #ffb300; color: #333; }
+  &.informativa { background: #43a047; }
+  div { font-size: 2rem; }
+}
+
+.alerta-card {
+  display: flex;
+  background: #fff;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-left: 6px solid;
+  &.critica { border-color: #e53935; }
+  &.importante { border-color: #ffb300; }
+  &.informativa { border-color: #43a047; }
+  padding: 1rem;
+}
+
+.alerta-icono {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  align-self: flex-start;
+  & ion-icon {
+    color: inherit;
+  }
+  &.critica ion-icon { color: #e53935; }
+  &.importante ion-icon { color: #ffb300; }
+  &.informativa ion-icon { color: #43a047; }
+}
+
+.alerta-info {
+  flex: 1;
+}
+
+.alerta-titulo {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.alerta-mensaje {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.alerta-meta {
+  font-size: 0.9rem;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+}
+
+.alerta-acciones {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}

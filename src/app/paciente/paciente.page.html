@@ -14,17 +14,17 @@
       <ion-icon name="medkit" class="icono"></ion-icon>
       <span>Mis Medicinas</span>
     </div>
-    <div class="opcion">
+      <div class="opcion" (click)="irAMiDoctor()">
       <ion-icon name="person" class="icono"></ion-icon>
       <span>Mi Doctor</span>
     </div>
-    <div class="opcion">
+    <div class="opcion" (click)="irAMisCitas()">
       <ion-icon name="calendar" class="icono"></ion-icon>
       <span>Mis Citas</span>
     </div>
   </div>
 
-  <button class="btn-emergencia">
+  <button class="btn-emergencia" (click)="llamarDoctor()">
     <ion-icon name="alert-circle" class="icono-alerta"></ion-icon>
     Emergencia
   </button>

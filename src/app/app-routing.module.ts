@@ -35,6 +35,14 @@ const routes: Routes = [
     path: 'cuidador/alertas',
     loadComponent: () => import('./cuidador/alertas/alertas.page').then(m => m.AlertasPage)
   },
+  {
+    path: 'mi-doctor',
+    loadComponent: () => import('./mi-doctor/mi-doctor.page').then( m => m.MiDoctorPage)
+  },
+  {
+    path: 'mis-citas',
+    loadComponent: () => import('./mis-citas/mis-citas.page').then( m => m.MisCitasPage)
+  },
  
 
  

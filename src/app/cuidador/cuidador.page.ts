@@ -11,6 +11,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./cuidador.page.scss'],
 })
 export class CuidadorPage {
+  
 
 constructor(private navCtrl: NavController) {}
   irAHome() {

@@ -7,9 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: CuidadorPage
-  },  {
+  },
+  {
     path: 'alertas',
-    loadChildren: () => import('./alertas/alertas.module').then( m => m.AlertasPageModule)
+    loadComponent: () => import('./alertas/alertas.page').then( m => m.AlertasPage)
   }
 
 ];

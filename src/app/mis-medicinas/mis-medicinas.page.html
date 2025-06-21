@@ -1,18 +1,13 @@
 <ion-header>
-  <ion-toolbar color="primary" class="custom-toolbar">
-     <ion-buttons slot="start">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/paciente"></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      <div class="title-main">Mis Medicamentos</div>
-      <div class="title-date">Jueves, 27 Abril</div>
-    </ion-title>
+    <ion-title>Mis Medicinas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fondo-paciente">
-
-  <!-- Leyenda de estados -->
   <div class="legend">
     <span class="dot pendiente"></span> Pendiente
     <span class="dot tomado"></span> Tomado
@@ -20,36 +15,72 @@
   </div>
 
   <!-- Próxima Medicina -->
-  <div class="proxima-medicina">
+  <div *ngIf="proximaMedicina" class="proxima-medicina">
     <div class="proxima-header">
       <b>Próxima Medicina</b>
-      <span class="hora">14:00</span>
+      <span class="hora">{{ proximaMedicina.hora }}</span>
     </div>
-    <div class="nombre-medicina">Metformina 850mg</div>
-    <div class="detalle-medicina">1 pastilla con almuerzo</div>
-    <div class="indicaciones">
-      <div class="indicacion"><span class="num">1</span> Tomar con un vaso de agua</div>
-      <div class="indicacion"><span class="num">2</span> Durante o después del almuerzo</div>
-      <div class="indicacion"><span class="num">3</span> Confirmar la toma en la app</div>
+    <div class="nombre-medicina">{{ proximaMedicina.nombre }}</div>
+    <div class="detalle-medicina">{{ proximaMedicina.detalle }}</div>
+    <div class="indicaciones" *ngIf="proximaMedicina.instrucciones">
+      <div class="indicacion" *ngFor="let paso of proximaMedicina.instrucciones; let i = index">
+        <span class="num">{{ i + 1 }}</span> {{ paso }}
+      </div>
     </div>
+    <ion-button expand="block" color="success" (click)="confirmarToma(proximaMedicina)">Confirmar Toma</ion-button>
   </div>
 
-  <!-- Medicinas del día -->
-  <div class="medicina-card tomado">
-    <div class="hora-medicina">8:00</div>
-    <div class="nombre-medicina">Enalapril 10mg</div>
-    <div class="detalle-medicina">1 pastilla en ayunas</div>
-    <ion-icon name="checkmark-circle" class="icono-tomado"></ion-icon>
+  <!-- Formulario para agregar nueva medicina -->
+<form (ngSubmit)="agregarMedicina()" #medForm="ngForm" class="formulario-medicina">
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="nuevaMedicina.nombre" name="nombre" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Hora (HH:mm)</ion-label>
+    <ion-input type="time" [(ngModel)]="nuevaMedicina.hora" name="hora" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Detalle</ion-label>
+    <ion-input type="text" [(ngModel)]="nuevaMedicina.detalle" name="detalle"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Instrucciones (opcional)</ion-label>
+    <ion-textarea [(ngModel)]="nuevaMedicina.instruccionesTexto" name="instrucciones"></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" type="submit" [disabled]="!medForm.form.valid">Agregar Medicina</ion-button>
+</form>
+
+
+  <!-- Lista de Medicamentos del día -->
+  <div *ngFor="let med of listaMedicamentos" [ngClass]="med.estado" class="medicina-card">
+    <div class="hora-medicina">{{ med.hora }}</div>
+    <div class="nombre-medicina">{{ med.nombre }}</div>
+    <div class="detalle-medicina">{{ med.detalle }}
+      
+
+    </div>
+    
+    <!-- Íconos según estado -->
+    <ion-icon *ngIf="med.estado === 'tomado'" name="checkmark-circle" class="icono-tomado" color="success"></ion-icon>
+    <ion-icon *ngIf="med.estado === 'perdido'" name="close-circle" class="icono-perdido" color="danger"></ion-icon>
+    
+    <!-- Botones solo si está pendiente -->
+    <ion-button *ngIf="med.estado === 'pendiente'" size="small" color="success" (click)="confirmarToma(med)">Tomado</ion-button>
+    <ion-button *ngIf="med.estado === 'pendiente'" size="small" color="danger" (click)="marcarPerdido(med)">Perdido</ion-button>
+    <ion-button *ngIf="med.estado !== 'pendiente'" size="small" color="medium" (click)="restaurarPendiente(med)">Restaurar</ion-button>
+
   </div>
-
-
+  <ion-button (click)="testNotificacion()">Probar notificación</ion-button>
 </ion-content>
+
+
+<!-- Footer Home fijo abajo, FUERA de ion-content -->
 
 <ion-footer>
   <ion-toolbar>
     <ion-button expand="block" color="primary" (click)="irAHome()">
-      Ir al Home
+      Ir Al Home
     </ion-button>
   </ion-toolbar>
 </ion-footer>
-

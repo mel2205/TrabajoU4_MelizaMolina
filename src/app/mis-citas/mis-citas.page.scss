@@ -1,0 +1,17 @@
+.fondo-citas {
+  background: #f4f6fb;
+  min-height: 100vh;
+}
+
+.doctor-foto {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 16px auto 8px auto;
+  display: block;
+  border: 3px solid #3880ff;
+}
+ion-card {
+  text-align: center;
+}

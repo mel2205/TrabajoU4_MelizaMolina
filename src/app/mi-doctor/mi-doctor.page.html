@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/paciente"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi Doctor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let doctor of doctores">
+        <ion-card>
+          <img [src]="doctor.foto" alt="{{doctor.nombre}}" class="doctor-foto"/>
+          <ion-card-header>
+            <ion-card-title>{{ doctor.nombre }}</ion-card-title>
+            <ion-card-subtitle>{{ doctor.especialidad }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Próximo control:</strong></p>
+            <ion-chip color="secondary">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <ion-label>{{ doctor.proximoControl }}</ion-label>
+            </ion-chip>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary" (click)="irAHome()">
+      Ir al Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

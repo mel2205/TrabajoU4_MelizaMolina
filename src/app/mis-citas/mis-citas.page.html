@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/paciente"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mis Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-card *ngFor="let cita of proximasCitas">
+      <ion-card-header>
+        <ion-card-title>{{ cita.nombre }}</ion-card-title>
+        <ion-card-subtitle *ngIf="cita.especialidad">{{ cita.especialidad }}</ion-card-subtitle>
+        <ion-card-subtitle *ngIf="!cita.especialidad">{{ cita.tipo | titlecase }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>{{ cita.proximoControl }}</ion-label>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" color="primary" (click)="irAHome()">
+      Ir al Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
